@@ -1,0 +1,174 @@
+.container {
+  width: 80%;
+  height: 90%;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: $inner-shadow;
+
+  &_menu {
+    height: 100%;
+    box-shadow: $outer-shadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--small {
+    height: 100%;
+    display: grid;
+    grid-template-rows: [row-1_start] 48.65% [row-1_end row-2_start] 1fr [row-2_end];
+    grid-template-columns: [column-1_start] 49.1% [column-1_end column-2_start] 1fr [column-2_end];
+    grid-gap: 1.5rem;
+    position: relative;
+  }
+
+  &_playerWin {
+    height: 100%;
+    box-shadow: $outer-shadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    &_trophy {
+      height: 15rem;
+      margin-bottom: 2rem;
+      margin-left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+}
+.playerWin_btns {
+  display: flex;
+  align-items: center;
+}
+.item_container_total-score {
+  display: flex;
+  justify-content: center;
+  display: wrap;
+}
+.total--score {
+  padding-left: 1rem;
+}
+
+.center-container {
+  @include positionCenter();
+  z-index: 100;
+}
+@media only screen and(max-width: 1005px) {
+  .total--score {
+    padding: 0 1rem;
+  }
+}
+@media only screen and(max-width: 760px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media only screen and(max-width: 670px) {
+  .total--score {
+    padding: 0 0 0 1rem;
+  }
+  .container--small {
+    grid-template-columns: [column-1_start] 48.6% [column-1_end column-2_start] 1fr [column-2_end];
+  }
+}
+
+@media only screen and(max-width: 510px) {
+  .container--small {
+    grid-template-columns: [column-1_start] 48% [column-1_end column-2_start] 1fr [column-2_end];
+  }
+}
+
+@media only screen and(max-width: 375px) {
+  .container {
+    padding: 1rem;
+    &_playerWin_trophy {
+      height: 10rem;
+    }
+  }
+  .container--small {
+    grid-gap: 1rem;
+  }
+}
+
+@media only screen and(max-width: 292px) {
+  .total--score {
+    padding: 0 1rem;
+  }
+}
+
+// Height Media Query
+@media only screen and(max-width: 670px) and(max-height: 670px) {
+  .container--small {
+    grid-template-columns: [column-1_start] 49.2% [column-1_end column-2_start] 1fr [column-2_end];
+    grid-gap: 1rem;
+  }
+}
+@media only screen and(max-width: 510px) and(max-height: 670px) {
+  .container--small {
+    grid-template-columns: [column-1_start] 48.5% [column-1_end column-2_start] 1fr [column-2_end];
+    grid-gap: 1rem;
+  }
+}
+@media only screen and(max-height: 510px) and(min-width: 1250px) {
+  .container--small {
+    grid-template-columns: [column-1_start] 49.7% [column-1_end column-2_start] 1fr [column-2_end];
+    grid-gap: 1rem;
+  }
+}
+@media only screen and(max-height: 510px) and(max-width: 1250px) {
+  .container--small {
+    grid-template-columns: [column-1_start] 49.5% [column-1_end column-2_start] 1fr [column-2_end];
+    grid-gap: 1rem;
+  }
+}
+@media only screen and(max-height: 510px) and(max-width: 1005px) {
+  .container--small {
+    grid-template-columns: [column-1_start] 49.2% [column-1_end column-2_start] 1fr [column-2_end];
+    grid-gap: 1rem;
+  }
+}
+
+@media only screen and(max-height: 510px) and(max-width: 510px) {
+  .container--small {
+    grid-template-columns: [column-1_start] 48.7% [column-1_end column-2_start] 1fr [column-2_end];
+  }
+}
+
+@media only screen and(max-height: 510px) and(max-width: 410px) {
+  .container--small {
+    grid-template-columns: [column-1_start] 48% [column-1_end column-2_start] 1fr [column-2_end];
+  }
+}
+@media only screen and(max-height: 510px) {
+  .container_playerWin_trophy {
+    height: 10rem;
+  }
+}
+@media only screen and(max-height: 400px) {
+  .container--small {
+    grid-template-columns: [column-1_start] 49% [column-1_end column-2_start] 1fr [column-2_end];
+    grid-gap: 1rem;
+  }
+  .container_playerWin_trophy {
+    height: 8rem;
+  }
+  .playerWinGame {
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and(max-height: 300px) {
+  .container {
+    padding: 1rem;
+    &--small {
+      grid-template-rows: [row-1_start] 48.65% [row-1_end row-2_start] 47% [row-2_end];
+    }
+  }
+  .container_playerWin_trophy {
+    height: 5rem;
+  }
+}

@@ -1,0 +1,212 @@
+body {
+  font-family: "Saira Condensed", sans-serif;
+  font-weight: 600;
+  line-height: 1.6rem;
+  color: $color-secundary;
+  text-shadow: 1.5px 1.5px 3px #000;
+}
+
+p {
+  font-size: 2.2rem;
+}
+
+.item_current-score {
+  font-size: 3.5rem;
+}
+
+h1 {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.title {
+  font-size: 5rem;
+}
+
+.subtitle {
+  font-size: 2rem;
+}
+
+.btn_item {
+  font-size: 2rem;
+}
+
+.select-container {
+  font-size: 2rem;
+  @include fontStyle();
+}
+
+.select-item {
+  font-weight: 500;
+}
+
+.player-name {
+  @include fontStyle();
+  font-size: 1.5rem;
+}
+
+.select-players_text {
+  font-size: 3rem;
+}
+
+.playerWin {
+  text-align: center;
+  animation: bounce 0.8s infinite;
+  animation-timing-function: cubic-bezier(0.47, -0.6, 0.1, 1.14);
+}
+.playerWinGame {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 3rem;
+}
+
+.instructions_container {
+  font-size: 1.5rem;
+}
+
+// Responsive
+@media only screen and(max-width: 1125px) {
+  .player {
+    font-size: 3rem;
+  }
+  .playerWinGame {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+  }
+}
+@media only screen and(max-width: 1005px) {
+  .player {
+    font-size: 2rem;
+  }
+  .playerWin {
+    font-size: 3rem;
+  }
+  .playerWinGame {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and(max-width: 760px) {
+  .btn {
+    font-size: 1.2rem;
+  }
+  .dice_instructions p {
+    font-size: 1.5rem;
+  }
+  .instructions_container {
+    font-size: 1rem;
+  }
+  .player {
+    font-size: 1.5rem;
+  }
+  .item_current-score {
+    font-size: 2.5rem;
+  }
+  .playerWin {
+    font-size: 3rem;
+  }
+}
+@media only screen and(max-width: 670px) {
+  .item_total--score,
+  .total--score {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and(max-width: 410px) {
+  .player {
+    font-size: 1rem;
+  }
+  .playerWin {
+    font-size: 3rem;
+  }
+  .playerWinGame {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and(max-width: 375px) {
+  .title {
+    font-size: 4rem;
+  }
+  .subtitle,
+  .player-name {
+    font-size: 1.2rem;
+  }
+  .select-players_text {
+    font-size: 2.5rem;
+  }
+  .item_total--score {
+    font-size: 1.2rem;
+  }
+  .item_current-score {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and(max-width: 300px) {
+  .playerWin {
+    font-size: 2.5rem;
+  }
+  .playerWinGame {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+  .title {
+    font-size: 3rem;
+  }
+  .select-players_text {
+    font-size: 1.5rem;
+  }
+}
+
+// Height Media Query
+
+@media only screen and(max-height: 510px) {
+  .player-name {
+    font-size: 1.1rem;
+  }
+  .btn {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and(max-height: 400px) {
+  .title {
+    font-size: 3.5rem;
+  }
+  .subtitle {
+    font-size: 1.5rem;
+  }
+  .select-players_text {
+    font-size: 2rem;
+  }
+  .playerWin {
+    font-size: 2rem;
+  }
+  .playerWinGame {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and(max-height: 300px) {
+  .btn {
+    font-size: 1rem;
+  }
+  .dice_instructions {
+    p {
+      font-size: 1.2rem;
+    }
+  }
+  .select-players_text {
+    font-size: 1.5rem;
+  }
+  .item_current-score {
+    font-size: 2rem;
+  }
+  .item_total--score,
+  .total--score {
+    font-size: 1.2rem;
+  }
+}

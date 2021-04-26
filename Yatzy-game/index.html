@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f8b3bc8cdc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Yatzy Game</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Menu -->
+        <div class="container_menu">
+            <h1 class="title">Yatzy Game</h1>
+            <h1 class="subtitle">Student version</h1>
+            <img class="logo" src="/dice/dice-icon.png" alt="logo">
+            <!-- Instructions -->
+            <button class="btn btn_item btn_instructions">Instructions</button>
+            <div class="instructions_container hidden">
+                <ul>
+                    <li>The goal of this game is to arrive at 1000 points. For that you have to pass 3 thresholds which are at 100 points, 400 points and 700 points. For the first threshold you need to acumulate 100 points. After that, when you arrive between 300 and 400 points, respectively 600 and 700 points you must overtake the threshold to move forward.</li>
+                    <li>If you roll the dices and it lands 1 or 5 or you hit 3 of a kind, 4 of a kind or 5 of a kind you can hold your points and let the next player's turn begin or you can roll the remaining dices for additional points with the risk of losing them all.</li>
+                    <li>If you overtake a player you receive 50 points and he is deducted 50 points.</li>
+                    <li>If the overtaken player has more than 900 points, the previous rule is canceled.</li>
+                </ul>
+                <ul class="dice_instructions">
+                    <li class="dice_instructions_item">
+                        <img src="dice/dice-1.png" alt="dice-n" class="instructions_container--dice">
+                        <p>&nbsp;= 10</p>
+                    </li>
+                    <li class="dice_instructions_item">
+                        <img src="dice/dice-2.png" alt="dice-n" class="instructions_container--dice">
+                        <p>&nbsp;= 2</p>
+                    </li>
+                    <li class="dice_instructions_item">
+                        <img src="dice/dice-3.png" alt="dice-n" class="instructions_container--dice">
+                        <p>&nbsp;= 3</p>
+                    </li>
+                    <li class="dice_instructions_item">
+                        <img src="dice/dice-4.png" alt="dice-n" class="instructions_container--dice">
+                        <p>&nbsp;= 4</p>
+                    </li>
+                    <li class="dice_instructions_item">
+                        <img src="dice/dice-5.png" alt="dice-n" class="instructions_container--dice">
+                        <p>&nbsp;= 5</p>
+                    </li>
+                    <li class="dice_instructions_item">
+                        <img src="dice/dice-6.png" alt="dice-n" class="instructions_container--dice">
+                        <p>&nbsp;= 6</p>
+                    </li>
+                    <li class="dice_instructions_item">
+                        <p>&nbsp;3 &#215; &nbsp;</p>
+                        <img src="dice/dice-n.png" alt="dice-n" class="instructions_container--dice">
+                        <p>&nbsp;= n &#215; 10</p>
+                    </li>
+                    <li class="dice_instructions_item">
+                        <p>&nbsp;4 &#215; &nbsp;</p>
+                        <img src="dice/dice-n.png" alt="dice-n" class="instructions_container--dice">
+                        <p>&nbsp;= n &#215; 20</p>
+                    </li>
+                    <li class="dice_instructions_item">
+                        <p>&nbsp;5 &#215; &nbsp;</p>
+                        <img src="dice/dice-n.png" alt="dice-n" class="instructions_container--dice">
+                        <p>&nbsp;= n &#215; 30</p>
+                    </li>
+                    <li class="dice_instructions_item">
+                        <p>&nbsp;5 &#215; &nbsp;</p>
+                        <img src="dice/dice-1.png" alt="dice-n" class="instructions_container--dice">
+                        <p>&nbsp;= Win the game</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Play -->
+            <button class="btn btn_item btn_play">Play</button>
+            <!-- Select Players -->
+            <div class="select-players hidden">
+                <h1 class="select-players_text">Select players:</h1>
+                <button class="btn btn_item select_player--2">2 Players</button>
+                <button class="btn btn_item select_player--3">3 Players</button>
+                <button class="btn btn_item select_player--4">4 Players</button>
+            </div>
+
+            <!-- Players name -->
+            <div class="player-names">
+                <input type="text" class="player-name player-name--1 hidden" maxlength="10" data-max-chars="10" placeholder="Player 1">
+                <input type="text" class="player-name player-name--2 hidden" maxlength="10" data-max-chars="10" placeholder="Player 2">
+                <input type="text" class="player-name player-name--3 hidden" maxlength="10" data-max-chars="10" placeholder="Player 3">
+                <input type="text" class="player-name player-name--4 hidden" maxlength="10" data-max-chars="10" placeholder="Player 4">
+            </div>
+
+            <!-- Navigate menu -->
+            <div class="navigate-menu_btns">
+                <button class="btn btn_item btn_back hidden">Back</button>
+                <button class="btn btn_item btn_next hidden">Next</button>
+            </div>
+        </div>
+
+        <!-- Players -->
+        <div class="container--small hidden">
+            <!-- Player 1 -->
+            <div class="item item--1 player-active hidden">
+                <div class="item_container item_container--1">
+                    <p class="item_current-score item_current-score--1">100</p>
+                    <div class="item_container_total-score">
+                        <p class="item_total--score">Total score:</p>
+                        <p class="total--score total--score--1">0</p>
+                    </div>
+                </div>
+                <h1 class="player player--1">Player 1</h1>
+            </div>
+            <!-- Player 2 -->
+            <div class="item item--2 hidden">
+                <div class="item_container item_container--2">
+                    <p class="item_current-score item_current-score--2">100</p>
+                    <div class="item_container_total-score">
+                        <p class="item_total--score">Total score:</p>
+                        <p class="total--score total--score--2">0</p>
+                    </div>
+                </div>
+                <h1 class="player player--2">Player 2</h1>
+            </div>
+            <!-- Player 3 -->
+            <div class="item item--3 hidden">
+                <div class="item_container item_container--3">
+                    <p class="item_current-score item_current-score--3">100</p>
+                    <div class="item_container_total-score">
+                        <p class="item_total--score">Total score:</p>
+                        <p class="total--score total--score--3">0</p>
+                    </div>
+                </div>
+                <h1 class="player player--3">Player 3</h1>
+            </div>
+            <!-- Player 4 -->
+            <div class="item item--4 hidden">
+                <div class="item_container item_container--4">
+                    <p class="item_current-score item_current-score--4">100</p>
+                    <div class="item_container_total-score">
+                        <p class="item_total--score">Total score:</p>
+                        <p class="total--score total--score--4">0</p>
+                    </div>
+                </div>
+                <h1 class="player player--4">Player 4</h1>
+            </div>
+        </div>
+
+        <!-- Container center -->
+        <div class="center-container hidden">
+            <!-- Buttons Up -->
+            <div class="btns-up">
+                <button class="btn btn_menu">Menu</button>
+                <button class="btn btn_new-game">New Game</button>
+            </div>
+
+            <!-- Dice container -->
+            <div class="dice-container">
+                <div class="dice-container--small">
+                    <img src="dice/dice-1.png" alt="dice-img1" class="dice-container--dice dice--1">
+                    <img src="dice/dice-1.png" alt="dice-img2" class="dice-container--dice dice--2">
+                    <img src="dice/dice-1.png" alt="dice-img3" class="dice-container--dice dice--3">
+                    <img src="dice/dice-1.png" alt="dice-img4" class="dice-container--dice dice--4">
+                    <img src="dice/dice-1.png" alt="dice-img5" class="dice-container--dice dice--5">
+                </div>
+            </div>
+
+            <!-- Buttons Down -->
+            <div class="btns-down">
+                <button class="btn btn_roll">Roll Dice</button>
+                <button class="btn btn_hold">Hold</button>
+            </div>
+        </div>
+
+        <!-- Container Win -->
+        <div class="container_playerWin hidden">
+            <div class="container_playerWin-up">
+                <img class="container_playerWin_trophy" src="dice/trophy.png" alt="trophy">
+                <h1 class="player playerWin">PlayerNameWin</h1>
+                <h1 class="playerWinGame">Won the game!</h1>
+            </div>
+            <div class="playerWin_btns">
+                <button class="btn btn_menu btn_menu_win">Menu</button>
+                <button class="btn btn_new-game btn_new-game_win">New Game</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

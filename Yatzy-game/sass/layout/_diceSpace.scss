@@ -1,0 +1,93 @@
+.dice-container {
+  width: 20rem;
+  height: 20rem;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: $color-primary;
+  box-shadow: $outer-shadow;
+
+  &--small {
+    background-color: $color-primary;
+    box-shadow: $inner-shadow;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    position: relative;
+  }
+
+  &--dice {
+    width: 3.5rem;
+    margin: 0 auto;
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px #000;
+    position: absolute;
+  }
+}
+
+.dice--1 {
+  top: 2rem;
+  left: 2rem;
+}
+
+.dice--2 {
+  top: 2rem;
+  right: 2rem;
+}
+
+.dice--3 {
+  @include positionCenter();
+}
+
+.dice--4 {
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.dice--5 {
+  bottom: 2rem;
+  right: 2rem;
+}
+
+// Responsive
+@media only screen and(max-width: 760px) {
+  .dice-container {
+    width: 15rem;
+    height: 15rem;
+  }
+  .dice-container--dice {
+    width: 2.5rem;
+  }
+}
+@media only screen and(max-width: 410px) {
+  .dice-container--dice {
+    width: 2rem;
+  }
+  .dice-container {
+    width: 13rem;
+    height: 13rem;
+  }
+}
+
+// Height Media Query
+@media only screen and(max-height: 670px) and(max-width: 670px) {
+  .dice-container {
+    width: 11.5rem;
+    height: 11.5rem;
+    &--dice {
+      width: 1.5rem;
+    }
+  }
+}
+
+@media only screen and(max-height: 510px) {
+  .dice-container {
+    width: 11.5rem;
+    height: 11.5rem;
+    &--dice {
+      width: 1.5rem;
+    }
+  }
+}
