@@ -1,0 +1,218 @@
+.logo {
+  width: 6rem;
+  margin-bottom: 3rem;
+}
+
+.title {
+  margin-bottom: 2rem;
+}
+
+.btn_item {
+  margin: 1rem;
+  width: fit-content;
+}
+
+// Instructions container
+.instructions_container {
+  width: 60%;
+  background-color: transparent;
+  box-shadow: $inner-shadow;
+  padding: 2rem;
+  padding-left: 4rem;
+  color: $color-secundary;
+  text-shadow: 1.5px 1.5px 3px #000;
+  font-weight: 600;
+  line-height: 3rem;
+  text-align: justify;
+
+  &--dice {
+    height: 2rem;
+  }
+}
+
+.dice_instructions {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  line-height: 5rem;
+
+  &_item {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+}
+
+// Select container
+.select-players {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &_text {
+    margin-bottom: 1rem;
+  }
+}
+
+// Player Names
+.player-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.player-name {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  box-shadow: $outer-shadow;
+  border: none;
+  outline: none;
+  padding: 1rem;
+
+  &:focus {
+    box-shadow: $inner-shadow;
+  }
+}
+
+// Responsive
+@media only screen and(max-width: 1325px) {
+  .instructions_container {
+    width: 80%;
+  }
+}
+
+@media only screen and(max-width: 1005px) {
+  .instructions_container {
+    width: 90%;
+  }
+}
+
+@media only screen and(max-width: 760px) {
+  .dice_instructions {
+    line-height: 3rem;
+  }
+  .instructions_container--dice {
+    height: 1.5rem;
+  }
+}
+
+@media only screen and(max-width: 510px) {
+  .instructions_container {
+    line-height: 2rem;
+    padding: 1rem 1rem 1rem 2.5rem;
+  }
+}
+
+@media only screen and(max-width: 375px) {
+  .title {
+    margin-bottom: 1rem;
+  }
+  .dice_instructions_item {
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}
+
+@media only screen and(max-width: 300px) {
+  .instructions_container {
+    padding: 1rem;
+    line-height: 1.5rem;
+    li {
+      list-style: none;
+    }
+  }
+  .dice_instructions {
+    line-height: 2.5rem;
+  }
+  .player-name {
+    width: 12rem;
+  }
+}
+
+// Height Media Query
+@media only screen and(max-height: 550px) {
+  .instructions_container,
+  .dice_instructions {
+    line-height: 2rem;
+  }
+  .select-players {
+    flex-direction: row;
+    position: relative;
+    margin-top: 4%;
+
+    &_text {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -150%);
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .player-name {
+    width: 11rem;
+  }
+}
+@media only screen and(max-height: 550px) and (min-width: 600px) {
+  .player-names {
+    flex-direction: row;
+  }
+}
+
+@media only screen and(max-height: 430px) {
+  .title {
+    margin-bottom: 1rem;
+  }
+  .logo {
+    width: 4rem;
+    margin-bottom: inherit;
+  }
+  .btn_item {
+    margin: 0.5rem;
+  }
+  .instructions_container {
+    padding: 1rem;
+    width: 95%;
+
+    ul {
+      list-style: none;
+    }
+  }
+  .select-players {
+    margin-top: 8%;
+  }
+}
+
+@media only screen and(max-height: 340px) {
+  .instructions_container,
+  .dice_instructions {
+    line-height: 1.5rem;
+    width: 96%;
+  }
+
+  .instructions_container--dice {
+    height: 1.2rem;
+  }
+  .select-players {
+    margin-top: 4%;
+    &_text {
+      transform: translate(-50%, -110%);
+    }
+  }
+  .player-name {
+    padding: 0.8rem;
+  }
+}
+@media only screen and(max-height: 250px) {
+  .instructions_container {
+    line-height: 1.2rem;
+  }
+}

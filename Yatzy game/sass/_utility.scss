@@ -1,0 +1,25 @@
+.hidden {
+  display: none;
+}
+
+.player-active {
+  background-color: $color-active;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
