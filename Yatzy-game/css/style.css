@@ -309,7 +309,7 @@ h1 {
 
 .btn_item {
   margin: 1rem;
-  width: fit-content; }
+  width: inherit; }
 
 .instructions_container {
   width: 60%;
