@@ -470,11 +470,11 @@ btnRoll.addEventListener('click', () => {
     for (let i = 0; i < allDice.length; i++){
         allDice[i].classList.remove('hidden');
     }
-    diceEl1.src = `dice/dice-${dice1}.png`;
-    diceEl2.src = `dice/dice-${dice2}.png`;
-    diceEl3.src = `dice/dice-${dice3}.png`;
-    diceEl4.src = `dice/dice-${dice4}.png`;
-    diceEl5.src = `dice/dice-${dice5}.png`;
+    diceEl1.src = `images-audio/dice-${dice1}.png`;
+    diceEl2.src = `images-audio/dice-${dice2}.png`;
+    diceEl3.src = `images-audio/dice-${dice3}.png`;
+    diceEl4.src = `images-audio/dice-${dice4}.png`;
+    diceEl5.src = `images-audio/dice-${dice5}.png`;
     console.log('Dice remaining:',diceRemaining);
 
     // Afisare zaruri
@@ -599,6 +599,7 @@ btnRoll.addEventListener('click', () => {
         document.querySelector('.center-container').classList.add('hidden');
         document.querySelector('.container_playerWin').classList.remove('hidden');
         document.querySelector('.playerWin').textContent = document.querySelector(`.player--${activePlayer}`).textContent;
+        document.querySelector('#winSound').play();
     }else if(sumDice1 === 4){
         currentScore += 200;
         document.querySelector(`.item_current-score--${activePlayer}`).textContent = currentScore;
@@ -713,6 +714,7 @@ btnRoll.addEventListener('click', () => {
         document.querySelector('.center-container').classList.add('hidden');
         document.querySelector('.container_playerWin').classList.remove('hidden');
         document.querySelector('.playerWin').textContent = document.querySelector(`.player--${activePlayer}`).textContent;
+        document.querySelector('#winSound').play();
     }
     
 
