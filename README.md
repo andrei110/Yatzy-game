@@ -7,7 +7,6 @@
 
 <h3>Install ⚙</h3>
 <ul>
-  <li>cd Yatzy-game</li>
   <li>npm install</li>
 </ul>
 
